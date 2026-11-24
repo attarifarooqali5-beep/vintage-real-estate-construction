@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTAGE REAL ESTATE & CONSTRUCTION | Build a Better Tomorrow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel & Playfair Display for Luxury Headings, Plus Jakarta Sans for Clean UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Luxury Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0B0D',
+                        charcoal: '#141418',
+                        charcoalLight: '#1C1C22',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA821C',
+                            muted: 'rgba(212, 175, 55, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styles & Metallic Gold Gradients */
+        body {
+            background-color: #0B0B0D;
+            color: #F4F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA821C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #B08721 100%);
+        }
+
+        .gold-bg-gradient:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #DFBC49 50%, #C29629 100%);
+        }
+
+        .glass-nav {
+            background: rgba(11, 11, 13, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+        }
+
+        .luxury-card {
+            background: linear-gradient(145deg, #141418 0%, #0E0E11 100%);
+            border: 1px solid rgba(212, 175, 55, 0.14);
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .luxury-card:hover {
+            border-color: rgba(212, 175, 55, 0.65);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Subtle Architectural Grid Pattern Overlay */
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(11, 11, 13, 0.72), rgba(11, 11, 13, 0.96)),
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #332B14;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-obsidian">
+
+    <!-- =====================================================================
+         1. STICKY LUXURY GLASSMORPHISM NAVIGATION BAR
+    ====================================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Custom SVG Architectural V-Roof Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-charcoal border border-gold/40 flex items-center justify-center shadow-lg group-hover:border-gold transition-colors">
+                        <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#F3E5AB"/>
+                                    <stop offset="50%" stop-color="#D4AF37"/>
+                                    <stop offset="100%" stop-color="#AA821C"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Architectural Roof & Skyline -->
+                            <path d="M16 26L32 12L48 26" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="28" y="21" width="3.5" height="3.5" fill="url(#goldGrad)"/>
+                            <rect x="33" y="21" width="3.5" height="3.5" fill="url(#goldGrad)"/>
+                            <rect x="28" y="26" width="3.5" height="3.5" fill="url(#goldGrad)"/>
+                            <rect x="33" y="26" width="3.5" height="3.5" fill="url(#goldGrad)"/>
+                            <!-- Bold Luxury V Swoosh -->
+                            <path d="M10 24L25 52L54 27C41 31 29 37 25 44L17 24H10Z" fill="url(#goldGrad)"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-cinzel font-bold text-lg sm:text-xl tracking-wider gold-text-gradient leading-none">VINTAGE</span>
+                        <span class="text-[9px] sm:text-[10px] tracking-[0.2em] text-gray-300 uppercase mt-1 font-medium">Real Estate & Construction</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                    <a href="#home" class="hover:text-gold transition-colors">Home</a>
+                    <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                    <a href="#properties" class="hover:text-gold transition-colors">Featured Properties</a>
+                    <a href="#estimator" class="hover:text-gold transition-colors">Cost Estimator</a>
+                    <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openInquiryModal('Free Consultation Request')" class="hidden sm:inline-flex items-center gap-2 gold-bg-gradient text-obsidian font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-gold/20 transition-all transform hover:scale-105 cursor-pointer">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Book Consultation</span>
+                    </button>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl bg-charcoal border border-gold/30 text-gold hover:bg-gold/10 transition-colors">
+                        <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-Down Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-charcoal border-t border-gold/20 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+            <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Home</a>
+            <a href="#services" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Our Services</a>
+            <a href="#properties" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Featured Properties</a>
+            <a href="#estimator" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Construction Estimator</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Contact & Office</a>
+            <div class="pt-2">
+                <button onclick="closeMobileMenu(); openInquiryModal('Free Consultation Request')" class="w-full gold-bg-gradient text-obsidian font-bold py-3 rounded-xl text-center shadow-md">
+                    Book Free Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. FULL-SCREEN LUXURY HERO SECTION
+    ====================================================================== -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 hero-pattern border-b border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <!-- Luxury Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-charcoal/90 border border-gold/40 mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    <span class="text-xs font-semibold tracking-widest uppercase text-gold-light">Build a Better Tomorrow</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide">
+                    VINTAGE <br>
+                    <span class="gold-text-gradient">REAL ESTATE & CONSTRUCTION</span>
+                </h1>
+
+                <!-- Tagline Script Accent -->
+                <p class="font-playfair italic text-xl sm:text-2xl text-gold-light mt-3">
+                    "Build a Better Tomorrow"
+                </p>
+
+                <!-- Roman Urdu & English Trust Subheadline -->
+                <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+                    Plot chahiye ho, luxury apartment ya bana banaya ghar — <span class="text-white font-medium">Commercial ho ya Residential</span>, ya phir apna naya ghar banwana chahte hon; 
+                    <span class="text-gold font-semibold">hum aapki har deal ko mukammal aur bharose ke sath poora karwayenge!</span>
+                </p>
+
+                <!-- Hero Interactive Action Buttons -->
+                <div class="mt-9 flex flex-col sm:flex-row gap-4">
+                    <a href="#properties" class="gold-bg-gradient text-obsidian font-bold px-8 py-4 rounded-xl text-center shadow-xl shadow-gold/20 hover:shadow-gold/30 transition-all flex items-center justify-center gap-2.5">
+                        <span>Explore Properties</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <button onclick="openInquiryModal('Custom Construction / Property Deal Quote')" class="px-8 py-4 rounded-xl bg-charcoal/80 hover:bg-charcoal border border-gold/50 text-gold-light font-semibold text-center transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+                        <i class="fa-solid fa-compass-drafting text-gold"></i>
+                        <span>Request a Quote</span>
+                    </button>
+                </div>
+
+                <!-- Trust Metrics Bar -->
+                <div class="mt-14 pt-8 border-t border-gold/20 grid grid-cols-3 gap-6 max-w-xl">
+                    <div>
+                        <p class="font-cinzel text-2xl sm:text-3xl font-bold text-gold">100%</p>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-1">Verified Files & Deals</p>
+                    </div>
+                    <div>
+                        <p class="font-cinzel text-2xl sm:text-3xl font-bold text-gold">A+</p>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-1">Construction Quality</p>
+                    </div>
+                    <div>
+                        <p class="font-cinzel text-2xl sm:text-3xl font-bold text-gold">24/7</p>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-1">Dedicated Advisory</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. CORE SERVICES GRID (4 LUXURY CARDS)
+    ====================================================================== -->
+    <section id="services" class="py-20 sm:py-28 bg-obsidian relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold">What We Offer</span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Premier Real Estate & Construction Services</h2>
+                <div class="w-24 h-0.5 gold-bg-gradient mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 text-sm sm:text-base mt-4">
+                    Har kisam ki khareed-o-farokht aur modern construction solutions ek hi chhat ke neeche.
+                </p>
+            </div>
+
+            <!-- 4 Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Plots -->
+                <div class="luxury-card rounded-2xl p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-white mb-3">Residential & Commercial Plots</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Prime locations par safe aur high-ROI residential aur commercial plots ki transparent khareed-o-farokht.
+                        </p>
+                    </div>
+                    <button onclick="openInquiryModal('Plot Inquiry (Residential / Commercial)')" class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold hover:text-gold-light cursor-pointer">
+                        <span>Inquire Deals</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2: Luxury Apartments -->
+                <div class="luxury-card rounded-2xl p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-white mb-3">Luxury Apartments</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Modern amenities, easy installment plans aur ready-to-move luxury apartments behtareen societies mein.
+                        </p>
+                    </div>
+                    <button onclick="openInquiryModal('Luxury Apartment Inquiry')" class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold hover:text-gold-light cursor-pointer">
+                        <span>View Options</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3: Ready-Made Homes -->
+                <div class="luxury-card rounded-2xl p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-white mb-3">Ready-Made Homes</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            <span class="text-gray-200 font-medium">Bana Banaya Ghar:</span> Designer elevation, solid structure aur premium interior ke sath fori rehaish ke liye tayyar ghar.
+                        </p>
+                    </div>
+                    <button onclick="openInquiryModal('Ready-Made Home (Bana Banaya Ghar)')" class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold hover:text-gold-light cursor-pointer">
+                        <span>Book Site Visit</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4: Turnkey House Construction -->
+                <div class="luxury-card rounded-2xl p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-white mb-3">Turnkey Construction</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Apna ghar banwana chahte hain? Naksha (Architecture), Gray Structure se lekar A-Category Finishing tak mukammal zimmedari.
+                        </p>
+                    </div>
+                    <button onclick="openInquiryModal('Turnkey House Construction Quote')" class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold hover:text-gold-light cursor-pointer">
+                        <span>Get Construction Rate</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. INTERACTIVE FEATURED PROPERTIES SECTION WITH CATEGORY FILTERS
+    ====================================================================== -->
+    <section id="properties" class="py-20 sm:py-28 bg-charcoal border-y border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header & Filter Tabs -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold">Exclusive Portfolio</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Featured Properties</h2>
+                    <p class="text-gray-400 text-sm mt-2">Sample luxury listings — aap apni actual properties aur prices baad mein update kar sakte hain.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2" id="propertyFilters">
+                    <button data-filter="all" class="filter-btn active px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold text-obsidian transition-all cursor-pointer">All</button>
+                    <button data-filter="plots" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-obsidian text-gray-300 border border-gold/25 hover:border-gold transition-all cursor-pointer">Plots</button>
+                    <button data-filter="apartments" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-obsidian text-gray-300 border border-gold/25 hover:border-gold transition-all cursor-pointer">Apartments</button>
+                    <button data-filter="homes" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-obsidian text-gray-300 border border-gold/25 hover:border-gold transition-all cursor-pointer">Ready Homes</button>
+                    <button data-filter="commercial" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-obsidian text-gray-300 border border-gold/25 hover:border-gold transition-all cursor-pointer">Commercial</button>
+                </div>
+            </div>
+
+            <!-- Properties Grid Container (Populated cleanly via JS) -->
+            <div id="propertiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cards rendered dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. INTERACTIVE CONSTRUCTION COST / DEAL ESTIMATOR
+    ====================================================================== -->
+    <section id="estimator" class="py-20 sm:py-28 bg-obsidian relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="luxury-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-gold/30 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold">Smart Planning Tool</span>
+                            <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-white mt-2">Construction Cost Estimator</h2>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Apne plot size aur construction quality ke mutabiq fori andaazan lagat (estimated budget) maloom karein.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <!-- Property Type -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gold-light mb-2">1. Property Type</label>
+                                <select id="estType" onchange="calculateEstimate()" class="w-full bg-charcoal border border-gold/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold">
+                                    <option value="residential">Residential House / Villa</option>
+                                    <option value="commercial">Commercial Plaza / Office</option>
+                                </select>
+                            </div>
+
+                            <!-- Plot Size -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gold-light mb-2">2. Plot Size</label>
+                                <select id="estSize" onchange="calculateEstimate()" class="w-full bg-charcoal border border-gold/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold">
+                                    <option value="5">5 Marla (125 Sq. Yds)</option>
+                                    <option value="10" selected>10 Marla (250 Sq. Yds)</option>
+                                    <option value="20">1 Kanal (500 Sq. Yds)</option>
+                                    <option value="40">2 Kanal (1000 Sq. Yds)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Construction Quality -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gold-light mb-2">3. Construction Package</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="estQuality" value="gray" class="peer sr-only" onchange="calculateEstimate()">
+                                    <div class="p-4 rounded-xl bg-charcoal border border-gold/25 peer-checked:border-gold peer-checked:bg-gold/10 transition-all">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-bold text-white text-sm">Gray Structure</span>
+                                            <i class="fa-solid fa-cubes text-gold"></i>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-1">Foundation, Brick Work, Plaster, Roof & Plumbing Piping</p>
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="estQuality" value="luxury" class="peer sr-only" checked onchange="calculateEstimate()">
+                                    <div class="p-4 rounded-xl bg-charcoal border border-gold/25 peer-checked:border-gold peer-checked:bg-gold/10 transition-all">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-bold text-white text-sm">A-Category Luxury Finish</span>
+                                            <i class="fa-solid fa-crown text-gold"></i>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-1">Complete Turnkey Key-in-Hand Luxury Interior & Exterior</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Live Estimate Output Box -->
+                    <div class="lg:col-span-5">
+                        <div class="rounded-2xl bg-gradient-to-b from-charcoalLight to-obsidian border border-gold/40 p-6 sm:p-8 text-center relative overflow-hidden">
+                            <div class="absolute top-0 inset-x-0 h-1 gold-bg-gradient"></div>
+                            <span class="text-xs uppercase tracking-widest text-gray-400">Estimated Covered Area</span>
+                            <p id="estAreaDisplay" class="text-lg font-bold text-white mt-1">3,400 Sq. Ft.</p>
+
+                            <div class="my-6 py-6 border-y border-gold/20">
+                                <span class="text-xs uppercase tracking-widest text-gold-light">Estimated Construction Cost</span>
+                                <p id="estCostDisplay" class="font-cinzel text-3xl sm:text-4xl font-extrabold gold-text-gradient mt-2">
+                                    PKR 1.87 Crore
+                                </p>
+                                <p id="estRateNote" class="text-xs text-gray-400 mt-2">Approx. PKR 5,500 / Sq. Ft. (A-Category Turnkey)</p>
+                            </div>
+
+                            <button onclick="requestEstimateQuote()" class="w-full gold-bg-gradient text-obsidian font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-gold/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                                <span>Lock This Estimate & Consult</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <p class="text-[11px] text-gray-500 mt-3">*Final rates depend on architectural drawings & material selection.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. WHY CHOOSE VINTAGE SECTION
+    ====================================================================== -->
+    <section class="py-20 bg-charcoal border-t border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold">Our Promise</span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Why Choose Vintage?</h2>
+                <p class="text-gray-400 text-sm mt-3">Hum sirf deals nahi banate, balkay aitemad aur mazboot mustaqbil tameer karte hain.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-obsidian/80 border border-gold/15 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-lg">100% Verified Files</h3>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Har plot aur property ke tamam legal documents aur NOC ki mukammal tasdeeq.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-obsidian/80 border border-gold/15 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-lg">Transparent Deals</h3>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Bina kisi chhupe hue charges ke seedhi aur saaf khareed-o-farokht.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-obsidian/80 border border-gold/15 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-lg">End-to-End Construction</h3>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">A-grade cement, steel aur branded fittings ke sath expert engineers ki nigrani.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-obsidian/80 border border-gold/15 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-white text-lg">Timely Delivery</h3>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Muqarrar waqt par project completion aur chabi (possession) ki hawali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. CONTACT & INQUIRY SECTION (WITH EASY-TO-EDIT PLACEHOLDER BLOCKS)
+    ====================================================================== -->
+    <section id="contact" class="py-20 sm:py-28 bg-obsidian border-t border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Column: Easy-to-Edit Contact Placeholders -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold">Get In Touch</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Start Your Deal Today</h2>
+                        <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+                            Neeche diye gaye contact details mein aap baad mein apna asli Phone Number, Email aur Office Address aasani se daal sakte hain.
+                        </p>
+                    </div>
+
+                    <!-- PLACEHOLDER CARD 1: PHONE / WHATSAPP -->
+                    <div class="p-5 rounded-2xl bg-charcoal border border-dashed border-gold/45 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-gold font-bold">Phone & WhatsApp (Editable Placeholder)</span>
+                            <!-- EDIT YOUR PHONE NUMBER BELOW -->
+                            <p class="text-white font-semibold text-base mt-0.5">+92 3XX-XXXXXXX</p>
+                            <p class="text-xs text-gray-400 mt-0.5">Available Mon – Sat (10:00 AM – 8:00 PM)</p>
+                        </div>
+                    </div>
+
+                    <!-- PLACEHOLDER CARD 2: EMAIL ADDRESS -->
+                    <div class="p-5 rounded-2xl bg-charcoal border border-dashed border-gold/45 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-gold font-bold">Official Email (Editable Placeholder)</span>
+                            <!-- EDIT YOUR EMAIL BELOW -->
+                            <p class="text-white font-semibold text-base mt-0.5">info@vintagerealestate.com</p>
+                            <p class="text-xs text-gray-400 mt-0.5">For quotations, maps & property listings</p>
+                        </div>
+                    </div>
+
+                    <!-- PLACEHOLDER CARD 3: OFFICE ADDRESS -->
+                    <div class="p-5 rounded-2xl bg-charcoal border border-dashed border-gold/45 flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-gold font-bold">Head Office Address (Editable Placeholder)</span>
+                            <!-- EDIT YOUR OFFICE ADDRESS BELOW -->
+                            <p class="text-white font-semibold text-base mt-0.5">[Office # / Plaza Name, Main Boulevard, Your City]</p>
+                            <p class="text-xs text-gray-400 mt-0.5">Visit us for a free property & construction consultation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Working Interactive Inquiry Form -->
+                <div class="lg:col-span-7">
+                    <div class="luxury-card rounded-3xl p-6 sm:p-10">
+                        <h3 class="font-cinzel text-2xl font-bold text-white mb-2">Send Us Your Requirement</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 mb-6">Apni zaroorat batayein — hamari team jald aap se rabta karegi.</p>
+
+                        <form id="mainContactForm" onsubmit="handleFormSubmit(event, 'mainContactForm')" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1.5">Full Name *</label>
+                                    <input type="text" required placeholder="Apna naam likhein" class="w-full bg-obsidian border border-gold/25 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1.5">Phone / WhatsApp Number *</label>
+                                    <input type="tel" required placeholder="03XX-XXXXXXX" class="w-full bg-obsidian border border-gold/25 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1.5">I Am Interested In *</label>
+                                    <select class="w-full bg-obsidian border border-gold/25 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                                        <option>Buy a Plot (Residential / Commercial)</option>
+                                        <option>Buy a Luxury Apartment</option>
+                                        <option>Buy a Ready-Made Home (Bana Banaya Ghar)</option>
+                                        <option>Construct My House (Gray / Turnkey)</option>
+                                        <option>Sell My Property</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1.5">Preferred Area / Budget</label>
+                                    <input type="text" placeholder="e.g., 10 Marla / 2 Crore" class="w-full bg-obsidian border border-gold/25 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-300 mb-1.5">Message / Details</label>
+                                <textarea rows="3" placeholder="Apni deal ya construction ke baray mein mazeed tafseel likhein..." class="w-full bg-obsidian border border-gold/25 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full gold-bg-gradient text-obsidian font-bold py-4 rounded-xl shadow-lg hover:shadow-gold/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. LUXURY FOOTER
+    ====================================================================== -->
+    <footer class="bg-charcoal border-t border-gold/20 pt-14 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-gold/15">
+                <!-- Brand Identity -->
+                <div class="text-center md:text-left">
+                    <span class="font-cinzel font-bold text-2xl tracking-wider gold-text-gradient">VINTAGE</span>
+                    <p class="text-xs tracking-[0.2em] text-gray-400 uppercase mt-1">Real Estate & Construction — Build a Better Tomorrow</p>
+                </div>
+
+                <!-- Social Media Links (Facebook, TikTok, Instagram) -->
+                <div class="flex items-center gap-4">
+                    <a href="#contact" onclick="showToast('Add your Facebook Page link here later!')" aria-label="Facebook" class="w-11 h-11 rounded-xl bg-obsidian border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-obsidian transition-all">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#contact" onclick="showToast('Add your TikTok Profile link here later!')" aria-label="TikTok" class="w-11 h-11 rounded-xl bg-obsidian border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-obsidian transition-all">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#contact" onclick="showToast('Add your Instagram link here later!')" aria-label="Instagram" class="w-11 h-11 rounded-xl bg-obsidian border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-obsidian transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 VINTAGE REAL ESTATE & CONSTRUCTION. All Rights Reserved.</p>
+                <p class="text-gold-light/80 italic">Hum aapki har deal ko mukammal aur bharose ke sath poora karwayenge.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         FLOATING WHATSAPP PLACEHOLDER BUTTON
+    ====================================================================== -->
+    <button onclick="openInquiryModal('Direct WhatsApp Consultation (Add your WhatsApp number in code later)')" aria-label="WhatsApp Chat" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition-transform cursor-pointer border-2 border-white/20">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <!-- =====================================================================
+         INTERACTIVE INQUIRY / PROPERTY MODAL
+    ====================================================================== -->
+    <div id="inquiryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-charcoal border border-gold/50 rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl animate-fadeIn">
+            <button onclick="closeInquiryModal()" aria-label="Close Modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-obsidian text-gray-400 hover:text-gold flex items-center justify-center border border-gold/20 cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="text-[11px] font-bold uppercase tracking-widest text-gold">Vintage Priority Desk</span>
+            <h3 id="modalTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-white mt-1">Property & Construction Inquiry</h3>
+            <p class="text-xs text-gray-400 mt-1 mb-5">Apna naam aur number chhor dein, hamara representative rabta karega.</p>
+
+            <form id="modalForm" onsubmit="handleFormSubmit(event, 'modalForm')" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-gray-300 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Enter your full name" class="w-full bg-obsidian border border-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-300 mb-1">Phone / WhatsApp *</label>
+                    <input type="tel" required placeholder="03XX-XXXXXXX" class="w-full bg-obsidian border border-gold/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-300 mb-1">Selected Subject</label>
+                    <input id="modalSubjectInput" type="text" readonly class="w-full bg-obsidian/60 border border-gold/20 rounded-xl px-4 py-2.5 text-xs text-gold-light">
+                </div>
+                <button type="submit" class="w-full gold-bg-gradient text-obsidian font-bold py-3.5 rounded-xl shadow-lg cursor-pointer">
+                    Confirm Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Non-Blocking Toast Notification (Replaces alert()) -->
+    <div id="toastBox" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-charcoal border border-gold text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-sm">
+        <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+        <span id="toastMessage">Request received!</span>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT LOGIC (FILTERS, ESTIMATOR, MODALS & MOBILE MENU)
+    ====================================================================== -->
+    <script>
+        // 1. Sample Featured Properties Data (Easily editable later)
+        const propertiesData = [
+            {
+                id: 1,
+                category: 'homes',
+                badge: 'Ready Home',
+                title: '10 Marla Designer Luxury Villa',
+                location: 'Prime Residential Sector (Sample Location)',
+                size: '10 Marla (250 Sq. Yds)',
+                specs: '5 Beds • Attached Baths • Modern Kitchen',
+                price: 'PKR 4.25 Crore (Sample)',
+                image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 2,
+                category: 'plots',
+                badge: 'Residential Plot',
+                title: '1 Kanal Corner Boulevard Plot',
+                location: 'Phase II Extension (Sample Location)',
+                size: '1 Kanal (500 Sq. Yds)',
+                specs: 'Possession Ready • Paid Dues • Park Facing',
+                price: 'PKR 2.80 Crore (Sample)',
+                image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 3,
+                category: 'apartments',
+                badge: 'Luxury Apartment',
+                title: '3-Bed Executive Sky Apartment',
+                location: 'Downtown Heights (Sample Location)',
+                size: '2,150 Sq. Ft.',
+                specs: '3 Beds • High-Speed Lifts • 24/7 Security',
+                price: 'PKR 1.95 Crore (Sample)',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 4,
+                category: 'commercial',
+                badge: 'Commercial',
+                title: 'Main Boulevard Commercial Plaza Plot',
+                location: 'Central Business District (Sample)',
+                size: '8 Marla Commercial',
+                specs: 'High Footfall • Ideal for Brands & Offices',
+                price: 'PKR 6.50 Crore (Sample)',
+                image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 5,
+                category: 'homes',
+                badge: 'Bana Banaya Ghar',
+                title: '5 Marla Brand New Double Story House',
+                location: 'Executive Block (Sample Location)',
+                size: '5 Marla (125 Sq. Yds)',
+                specs: '4 Beds • Car Porch • Solid A+ Construction',
+                price: 'PKR 2.15 Crore (Sample)',
+                image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 6,
+                category: 'plots',
+                badge: 'Investment Plot',
+                title: '5 Marla Residential Plot on Installments',
+                location: 'New Smart City Project (Sample)',
+                size: '5 Marla',
+                specs: 'Easy 3-Year Plan • High Future Appreciation',
+                price: 'PKR 65 Lac (Sample)',
+                image: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80'
+            }
+        ];
+
+        // Render Property Cards based on Category Filter
+        function renderProperties(filter = 'all') {
+            const grid = document.getElementById('propertiesGrid');
+            const filtered = filter === 'all' 
+                ? propertiesData 
+                : propertiesData.filter(item => item.category === filter);
+
+            grid.innerHTML = filtered.map(prop => `
+                <div class="luxury-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-56 overflow-hidden bg-obsidian">
+                            <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/141418/D4AF37?text=VINTAGE+PROPERTY'">
+                            <span class="absolute top-4 left-4 bg-obsidian/90 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                                ${prop.badge}
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-1.5 text-xs text-gold-light mb-2">
+                                <i class="fa-solid fa-location-dot text-gold"></i>
+                                <span>${prop.location}</span>
+                            </div>
+                            <h3 class="font-cinzel text-lg font-bold text-white leading-snug">${prop.title}</h3>
+                            <p class="text-xs text-gray-400 mt-2">${prop.specs}</p>
+                            <div class="mt-4 pt-4 border-t border-gold/15 flex items-center justify-between text-xs">
+                                <span class="text-gray-400"><i class="fa-solid fa-ruler-combined text-gold mr-1.5"></i>${prop.size}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="block text-[10px] uppercase text-gray-500">Demand / Price</span>
+                            <span class="font-bold text-sm text-gold">${prop.price}</span>
+                        </div>
+                        <button onclick="openInquiryModal('Inquiry: ${prop.title}')" class="px-4 py-2.5 rounded-xl bg-gold/15 hover:bg-gold text-gold hover:text-obsidian border border-gold/40 text-xs font-bold transition-all cursor-pointer">
+                            Inquire Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Tab Click Handlers
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-gold', 'text-obsidian');
+                    b.classList.add('bg-obsidian', 'text-gray-300', 'border', 'border-gold/25');
+                });
+                btn.classList.remove('bg-obsidian', 'text-gray-300', 'border', 'border-gold/25');
+                btn.classList.add('bg-gold', 'text-obsidian');
+                renderProperties(btn.dataset.filter);
+            });
+        });
+
+        // 2. Interactive Construction Cost Estimator Logic
+        function calculateEstimate() {
+            const type = document.getElementById('estType').value;
+            const marla = parseInt(document.getElementById('estSize').value, 10);
+            const quality = document.querySelector('input[name="estQuality"]:checked').value;
+
+            // Typical covered area multipliers in Sq. Ft.
+            const coveredAreaMap = {
+                5: type === 'commercial' ? 2400 : 1950,
+                10: type === 'commercial' ? 4500 : 3400,
+                20: type === 'commercial' ? 8500 : 6200,
+                40: type === 'commercial' ? 16000 : 11500
+            };
+
+            const area = coveredAreaMap[marla] || 3400;
+            // Base per sq. ft. rate (PKR)
+            let ratePerSqFt = quality === 'gray' ? 2800 : 5500;
+            if (type === 'commercial') ratePerSqFt += 600;
+
+            const totalPKR = area * ratePerSqFt;
+            const inCrores = (totalPKR / 10000000).toFixed(2);
+
+            document.getElementById('estAreaDisplay').textContent = `${area.toLocaleString()} Sq. Ft.`;
+            document.getElementById('estCostDisplay').textContent = `PKR ${inCrores} Crore`;
+            document.getElementById('estRateNote').textContent = 
+                `Approx. PKR ${ratePerSqFt.toLocaleString()} / Sq. Ft. (${quality === 'gray' ? 'Gray Structure' : 'A-Category Turnkey'})`;
+        }
+
+        function requestEstimateQuote() {
+            const cost = document.getElementById('estCostDisplay').textContent;
+            const area = document.getElementById('estAreaDisplay').textContent;
+            openInquiryModal(`Construction Quote (${area} - Est. ${cost})`);
+        }
+
+        // 3. Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-xmark');
+        }
+
+        // 4. Inquiry Modal & Toast Feedback
+        function openInquiryModal(subjectText) {
+            const modal = document.getElementById('inquiryModal');
+            document.getElementById('modalSubjectInput').value = subjectText;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeInquiryModal() {
+            const modal = document.getElementById('inquiryModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleFormSubmit(event, formId) {
+            event.preventDefault();
+            document.getElementById(formId).reset();
+            if (formId === 'modalForm') closeInquiryModal();
+            showToast('Shukriya! Aapki request receive ho gayi hai. Hum jald rabta karenge.');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastBox');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProperties('all');
+            calculateEstimate();
+        });
+    </script>
+</body>
+</html>
